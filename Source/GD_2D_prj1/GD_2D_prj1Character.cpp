@@ -154,4 +154,9 @@ void AGD_2D_prj1Character::UpdateCharacter()
 			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
 	}
+	bool JumpRecharge = false;
+	if (Stamina <= 0)
+	{
+		
+	}
 }

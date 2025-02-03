@@ -65,4 +65,8 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = "PlayerAttributes|Stamina")
+	int Stamina;
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "PlayerAttributes|Stamina")
+	int MaxStamina = 100;
 };
