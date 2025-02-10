@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "PaperCharacter.h"
+#include "EnhancedInputComponent.h"
+#include "InputActionValue.h"
 #include "GD_2D_prj1Character.generated.h"
 
 class UTextRenderComponent;
@@ -40,6 +42,16 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animations)
 	class UPaperFlipbook* IdleAnimation;
 
+	
+	class UInputMappingContext;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "EnhancedInput")
+	UInputMappingContext* InputMapping;
+
+	class UInputAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "EnhancedInput")
+	UInputAction* IA_Move;
+
+
 	/** Called to choose the correct animation to play based on the character's movement state */
 	void UpdateAnimation();
 
@@ -65,8 +77,6 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = "PlayerAttributes|Stamina")
-	int Stamina;
-	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "PlayerAttributes|Stamina")
-	int MaxStamina = 100;
+	//UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = "PlayerAttributes|Stamina")
+	//UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "PlayerAttributes|Stamina")
 };
